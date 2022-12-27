@@ -1,0 +1,4 @@
+12-27-2022 @ 17:55:59 - [API GET users me error:]: {"status":403,"response":{"message":"The User ID must match the consultant's","error":"forbidden","status":403,"cause":[]}}
+12-27-2022 @ 18:00:25 - [API GET users me error:]: {"status":403,"response":{"message":"The User ID must match the consultant's","error":"forbidden","status":403,"cause":[]}}
+12-27-2022 @ 18:15:36 - [API GET users me error:]: {"status":403,"response":{"message":"The User ID must match the consultant's","error":"forbidden","status":403,"cause":[]}}
+12-27-2022 @ 18:16:05 - [API GET users me error:]: {"status":403,"response":{"message":"The User ID must match the consultant's","error":"forbidden","status":403,"cause":[]}}
