@@ -69,3 +69,36 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
  * Note: Do not add any custom code here. Please use a custom plugin so that your customizations aren't lost during updates.
  * https://github.com/woocommerce/theme-customisations
  */
+
+/* Calling our APIs when payment is completed */
+add_action('woocommerce_payment_complete', 'callingTestApi');
+
+function callingTestApi($orderId) {
+	$url = "https://staging-api-parceiros.checkok.com.br/api/login";
+
+	$args = array(
+		'headers' => array(
+			'accept' => 'application/json',
+			'Content-Type' => 'application/json'
+		),
+
+		'body' => '{
+			"email": "marcos.felipe@checkok.com.br",
+			"password": "123456"
+		}'
+	);
+
+	$response = wp_remote_post($url, $args);
+
+	if(is_wp_error($response)) {
+		$reponseErrorMessage = $response->get_error_message();
+
+		echo "<script>console.log('$reponseErrorMessage')</script>";
+	}
+
+	else {
+		$response = json_encode($response);
+
+		echo "<script>console.log('$response')</script>";
+	}
+}
